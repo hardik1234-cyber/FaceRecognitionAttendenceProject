@@ -1,6 +1,6 @@
 # FaceRecognitionAttendenceProject
 
-1. A face recognition system made using opencv where the websm detects the face of a individual.
+1. A face recognition system made using opencv where the webcam detects the face of a individual.
 
 2. It compares it with the database images that is present , if the image matches any one of the database images it shows the indviduals name.
 
