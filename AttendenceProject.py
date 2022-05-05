@@ -4,8 +4,6 @@ import face_recognition
 import os
 from datetime import datetime
 
-
-
 path = 'DataBaseImages'
 images = []
 classNames = []
@@ -17,7 +15,6 @@ for cl in myList:
     images.append(curImg)
     classNames.append(os.path.splitext(cl)[0])
 print(classNames)
-
 
 def Findencodings(images):
     encodeList = []
@@ -42,13 +39,10 @@ def markAttendence(name):
             dtString = now.strftime('%H:%M')
             f.writelines(f'\n{name},{dtString}')
 
-
-
 cap = cv2.VideoCapture(0)
 
 encodeListKnown = Findencodings(images)
 print('Encoding Complete :',len(encodeListKnown))
-
 
 while True:
     success,img = cap.read()
@@ -73,8 +67,6 @@ while True:
             cv2.rectangle(img,(x1,y2-35),(x2,y2),(0,255,0),cv2.FILLED)
             cv2.putText(img,name,(x1+6,y2-6),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
             markAttendence(name)
-
-
 
     cv2.imshow('Webcam',img)
     cv2.waitKey(1)
